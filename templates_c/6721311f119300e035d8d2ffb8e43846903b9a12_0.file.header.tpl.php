@@ -1,12 +1,37 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.39, created on 2022-03-10 01:55:32
+  from '/opt/lampp/htdocs/miu/templates/html/header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_62294c84cd2914_44437234',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6721311f119300e035d8d2ffb8e43846903b9a12' => 
+    array (
+      0 => '/opt/lampp/htdocs/miu/templates/html/header.tpl',
+      1 => 1646832225,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_62294c84cd2914_44437234 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <base href="{$base}">
+    <base href="<?php echo $_smarty_tpl->tpl_vars['base']->value;?>
+">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{$title}</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css ">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -74,4 +99,5 @@
               </div>
             </div>
           </nav>
-    </container>
+    </container><?php }
+}
