@@ -1,0 +1,54 @@
+.input-number-no-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+.input-form{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(223,223,223);
+    width: 100%;
+    margin-bottom: 6px;
+    height: 50px;
+    color: #555;
+    padding-left: 10px;
+}
+.input_group{
+    margin-left: 50px;
+    background-color: brown;
+    visibility: visible;
+}
+.etiqueta{
+    font-family: "Open Sans", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    color: rgb(135,135,135);
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.titulo-campo{
+    color: #555;
+}
+.ico-form{
+    margin-top: 5px;
+    width: 34px;
+    opacity: 45%;
+}
+.title-card{
+    font-size: 24px;
+    margin-top: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.back-color{
+    background: rgb(255,0,254);
+    background: linear-gradient(90deg, rgba(255,0,254,1) 0%, rgba(9,9,121,0.5242471988795518) 35%, rgba(0,212,255,1) 100%);    
+}
+.add-btn:hover{
+    opacity: 100%;
+}
+.ico-off{
+    filter: grayscale(1);
+}
+.ico-on{
+    opacity: 75%;
+}
+
