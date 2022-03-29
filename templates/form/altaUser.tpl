@@ -42,13 +42,14 @@
                             </div>
                             <div class="col-2">
                                 <input class="input-form input-number-no-button" type="text" 
-                                                name="cod_area" placeholder="Sin 0 para móvil" id="" 
+                                                name="cod_area" placeholder="Sin 0 para móvil" id="cod_area" 
                                                 onkeypress="checkOnlyNumber(event)" required>
                                 <label class="etiqueta">código de área</label>
                             </div>
                             <div class="col-4 ms-4">
                                 <input class="input-form input-number-no-button" type="text" name="tel" 
-                                                placeholder="sin 15 para móvil" onkeypress="checkOnlyNumber(event)" required>
+                                                placeholder="sin 15 para móvil" id="tel"
+                                                onkeypress="checkOnlyNumber(event)" required>
                                 <label class="etiqueta">teléfono</label>
                             </div>
                             <div v-if="i > 1" class="form-check form-switch col-1 mt-2 ms-4">

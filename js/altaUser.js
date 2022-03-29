@@ -10,6 +10,13 @@ var tel = new Vue({
     }
 });
 
+var docBox = new Vue({
+    el: '#docBox',
+    data: {
+
+    },
+});
+
 // chechkbox Redes
 let switchInsta = document.querySelector("#switchInsta");
 switchInsta.addEventListener("click", allowInputInsta);
@@ -86,12 +93,49 @@ let formAltaUsr = document.querySelector("#formAltaUsr");
 function verifyData(e){
     e.preventDefault();
     let form = new FormData(formAltaUsr);
-    let data = {
-        "nombre": form.get("first_name"),
-        "apellido": form.get("last_name"), 
-        "email": form.get("email"),
-        "tel": "",
+    
+    // formateo datos nombre
+    let name = form.get("last_name") + form.get("first_name");
 
+    // formateo datos telefono
+    let codesArea = document.querySelectorAll("#cod_area");
+    let tels = document.querySelectorAll("#tel");
+    let tel = [];
+    for (let i=0; i<codesArea.length; i++){
+        let data = {
+            codArea: codesArea[i].value,
+            tel: tels[i].value
+        };
+        tel.push(data);
+    }
+    
+    // formateo dirección
+    let address =   form.get("calle") + " " + 
+                    form.get("numero");
+    if (form.get("piso")!=""){
+        address = address + ", Piso: " + form.get("piso");
+    }
+    if (form.get("dpto")!=""){
+        address = address + ", Dpto: " + form.get("dpto");
+    }
+    address = address + ", Pcia: " +
+                    form.get("provincia") + ", Localidad: " +
+                    form.get("localidad") + ", CP:" +
+                    form.get("zip");
+    
+    // formateo de redes
+    let redes = {
+        insta: form.get("instagram"),
+        face: form.get("facebook"),
+    };
+
+    // preaprando objeto para enviar
+    let data = {
+        "name": name,
+        "email": form.get("email"),
+        "tel": tel,
+        "address": address,
+        "social": redes,
     }
     console.log(data);
 }
