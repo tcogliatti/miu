@@ -2,7 +2,7 @@
         
         <div class="shadow-lg card text-dark bg-light mb-3 w-75">
             <div class="card-header text-white bg-dark mb-3 align-items-center">
-            <p class="title-card">Nuevo Usuario</p>    
+            <p class="title-card">Nuevo Cliente</p>    
             </div>
             <form action="" method="post" id="formAltaUsr">
                 <div class="card-body w-100 rounded-0">
@@ -174,24 +174,25 @@
                             <div class="col-5">
                                 <input class="input-form" type="text" name="dni" id="docInput"
                                                             placeholder="DNI sin puntos"
-                                                            onkeypress="checkOnlyNumber(event)" required>
+                                                            onkeypress="checkOnlyNumber(event)"
+                                                            v-validate="required|numeric|max:length">
                             </div>
                         </div>
 
                         <!-- tipo de cliente -->
                         <div class="row g-6 mb-3">  
                             <div class="col-2 fw-bold pt-2">
-                                <p class="titulo-campo">User</p>
+                                <p class="titulo-campo">Tipo Cliente</p>
                             </div>
                             <div class="row g-8 col-8">
                                 <div class="form-check col-4 mt-2">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="client" id="exampleRadios1" value="dni" checked>
                                     <label class="etiqueta" for="exampleRadios1">
                                       Consumidor Final
                                     </label>
                                 </div>
                                 <div class="form-check col-4 mt-2">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="client" id="exampleRadios2" value="mayorista">
                                     <label class="etiqueta" for="exampleRadios2">
                                         Mayorísta
                                     </label>

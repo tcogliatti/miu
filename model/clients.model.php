@@ -34,7 +34,16 @@ class ClientsModel {
     {
 
     }
+    // --------- INSERTS
 
+    function insert($mensaje, $fecha, $puntaje, $id_user, $id_prod)
+    {
+        $query = $this->db->prepare('INSERT INTO comentario(mensaje, fecha, puntaje, id_user_fk, id_prod_fk) VALUES(?,?,?,?,?)');
+        $query->execute([$mensaje, $fecha, $puntaje, $id_user, $id_prod]);
+
+        // 3. Obtengo y devuelo el ID nuevo
+        return $this->db->lastInsertId();
+    }
     function add($param)
     {
             $query = $this->db->prepare(

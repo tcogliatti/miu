@@ -1,16 +1,16 @@
 <?php
 
 require_once 'libs/Router.php';
-require_once 'api/ApiComentsController.php';
+require_once 'api/apiController.client.php';
 
 //creamos el router
 $router = new Router();
 
 //definimos la tabla (  $router->addRoute(RECURSO, METODO, CLASSE, FUNCION)  )
-$router->addRoute('coments/producto/:ID', 'GET', 'ApiComentsController', 'getAll');
-$router->addRoute('coments/:ID', 'DELETE', 'ApiComentsController', 'delete');
-$router->addRoute('coments', 'POST', 'ApiComentsController', 'add');
-$router->addRoute('coments/producto/:ID/filter', 'GET', 'ApiComentsController', 'filter');
+// $router->addRoute('coments/producto/:ID', 'GET', 'ApiComentsController', 'getAll');
+// $router->addRoute('coments/:ID', 'DELETE', 'ApiComentsController', 'delete');
+$router->addRoute('coments', 'POST', 'ApiClientController', 'add');
+// $router->addRoute('coments/producto/:ID/filter', 'GET', 'ApiComentsController', 'filter');
 
 // ruteo
 $resource = $_GET['resource'];

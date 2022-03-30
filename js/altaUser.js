@@ -5,16 +5,6 @@ var tel = new Vue({
     data: {
         counterTel: 1,
     },
-    method:{
-       
-    }
-});
-
-var docBox = new Vue({
-    el: '#docBox',
-    data: {
-
-    },
 });
 
 // chechkbox Redes
@@ -90,6 +80,8 @@ let btnSubmit = document.querySelector("#submitForm");
 let formAltaUsr = document.querySelector("#formAltaUsr");
 // btnSubmit.addEventListener("click", verifyData);
 
+// ---------- Preparando  datos
+
 function verifyData(e){
     e.preventDefault();
     let form = new FormData(formAltaUsr);
@@ -125,10 +117,30 @@ function verifyData(e){
     
     // formateo de redes
     let redes = {
-        insta: form.get("instagram"),
-        face: form.get("facebook"),
+        "insta": form.get("instagram"),
+        "face": form.get("facebook"),
     };
 
+    // formateo tipo de cliente
+    let mayorista = false;
+    if(form.get("client")!="dni"){
+        mayorista = true;
+    }
+
+    // medios de pago
+    let banco = "";
+    if(switchBco.checked)
+        banco =  {
+            "cbu": form.get("cbu"),
+            "banco": form.get("bank"),
+        }
+    else 
+        banco = null;
+
+    let payMethod = {
+        "mp": form.get("ml"),
+        "bank": banco,
+    }
     // preaprando objeto para enviar
     let data = {
         "name": name,
@@ -136,9 +148,15 @@ function verifyData(e){
         "tel": tel,
         "address": address,
         "social": redes,
+        "documento": form.get("dni"),
+        "mayorista": mayorista,
+        "pay_method": payMethod,
+
     }
     console.log(data);
 }
+
+// ------------- Envío de datos a servidor
 
 async function altaUser(e){
     e.preventDefault();
